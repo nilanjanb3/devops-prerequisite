@@ -1,0 +1,6 @@
+❯ echo $SHELL
+/usr/bin/zsh
+
+❯ echo "Hi"
+Hi
+
