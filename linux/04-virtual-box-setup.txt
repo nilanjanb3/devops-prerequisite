@@ -1,0 +1,19 @@
+ip addr show
+This will show all ips
+
+ip addr add 172.17.148.109/20 dev eth0
+This will add ip range
+
+sudo service sshd status
+
+Host Only --> Internal network only, can communicate to internet using ip forwarding only (using a routing device)
+NAT --> separate internal network per vm but can communicate to internet
+NAT network --> internal network among VMs, can communicate to internet
+Brigge network --> every VM will get a public facing IP address
+
+** If after selection of bridge network public ip is not showing then
+cd /etc/sysconfig/network-scripts/
+
+vim ifcfg-enp0s3
+
+make, ONBOOT=YES
