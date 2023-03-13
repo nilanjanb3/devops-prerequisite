@@ -4,3 +4,100 @@
 ❯ echo "Hi"
 Hi
 
+❯ pwd
+/mnt/d/KodeKloud/devops-prerequisite/linux
+
+❯ mkdir demo
+.
+├── 01-shell-intro.txt
+└── demo
+
+❯ cd demo && pwd
+/mnt/d/KodeKloud/devops-prerequisite/linux/demo
+
+# (;) used to run multiple commands respectively on a single go
+❯ mkdir demo; cd demo; touch hello.txt; echo "hi" >> hello.txt    
+❯ cat hello.txt
+hi
+
+# (&&) does the same as above
+❯ mkdir demo && cd demo && touch hello.txt
+❯ tree
+.
+└── hello.txt
+
+❯ mkdir -p demo1/demo2/demo3
+❯ tree
+.
+├── 01-shell-intro.txt
+└── demo1
+    └── demo2
+        └── demo3
+
+❯ rm -r demo1
+❯ tree
+.
+└── 01-shell-intro.txt
+
+❯ tree
+.
+├── 01-shell-intro.txt
+├── folder1
+│   └── hello.txt
+└── folder2
+
+❯ cp -r folder1 folder2/new-dir
+❯ tree
+.
+├── 01-shell-intro.txt
+├── folder1
+│   └── hello.txt
+└── folder2
+    └── new-dir
+        └── hello.txt
+
+❯ touch hello.txt
+❯ ls -al
+total 0
+drwxrwxrwx 1 nilanjan nilanjan 4096 Mar 12 23:39 .
+drwxrwxrwx 1 nilanjan nilanjan 4096 Mar 12 23:38 ..
+-rwxrwxrwx 1 nilanjan nilanjan    0 Mar 12 23:39 hello.txt
+
+❯ cat > hello.txt
+Hi, I'm Nilanjan
+[CTRL+D to exit]
+
+❯ cat hello.txt
+Hi, I'm Nilanjan
+
+❯ cp hello.txt abc.txt
+❯ tree
+.
+├── abc.txt
+└── hello.txt
+
+❯ mv abc.txt xyz.txt
+❯ tree
+.
+├── hello.txt
+└── xyz.txt
+
+❯ whoami
+nilanjan
+
+❯ id
+uid=1000(nilanjan) gid=1000(nilanjan) groups=1000(nilanjan),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),116(netdev),1001(docker)
+
+su <user-name> # this will change user
+
+ssh <user-name>@ip-addr # to login into another machine
+
+wget <url> -O <file-name.txt>
+curl <url> -O <file-name.txt>
+
+# wild card to list out file name contains release
+❯ ls /etc/*release*
+/etc/lsb-release  /etc/os-release
+
+# to check os related info
+cat /etc/*release*
