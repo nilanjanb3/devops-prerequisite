@@ -1,0 +1,15 @@
+RPM
+RedHat Package Manager
+
+rpm -i  <package-path> => installs package 
+rpm -e  <package-path> => uninstalls package
+rpm -q  <package-name> => query package
+rpm -qa <package-name> => all recently installed package
+
+YUM
+yum runs RPM underneath, it also installs dependencies 
+
+yum install <package-name>
+yum package <package-name>
+yum erase   <package-name>
+

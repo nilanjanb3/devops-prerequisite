@@ -1,0 +1,49 @@
+# service enable systemctl underneath
+service docker start
+
+systemctl start docker
+systemctl status docker
+systemctl stop docker
+
+systemctl enable docker # to enable docker on bootup
+systemctl disable docker # to disable docker on bootup
+
+Steps to create a service
+step 1: go to
+/etc/systemd/system
+
+step 2:
+create a file name <service-name>.service
+
+step 3:
+[Service]
+
+ExecStart = /usr/bin/python3 /mnt/d/Personal/Learning/devops-prerequisite/linux/app.py
+
+step 4:
+run systemctl start <service-name>
+
+a demo config:
+
+[Unit]
+
+Description=Docker Application Container Engine
+Documentation=https://docs.docker.com
+BindsTo=containerd.service
+After=network-online.target firewalld.service containerd.service
+Wants=network-online.target
+Requires=docker.socket
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=always
+StartLimitBurst=3
+StartLimitInterval=60s
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+
+[Install]
+WantedBy=multi-user.target
