@@ -1,0 +1,17 @@
+Vagrant
+A package tool, which makes the VM deployment easier
+It can be used with Oracle Virtual Box, VMWare, Docker, Hyper-V, and others
+
+run:
+vagrant init centos/7 
+this will create a Vagrantfile in a folder
+
+vagrant up
+will run the vm in virtual vox
+
+vagrant halt will terminate VM
+
+vagrant reload will update the changes, whatever we have done in Vagrantfile
+
+
+
