@@ -1,0 +1,13 @@
+ip link --> this command shows the internet interfaces of the os
+
+ip addr add 192.168.1.10/24 dev eth0 --> this will attach ip address to the interfaces
+
+ip route add 192.168.2.0/24 via 192.168.1.1  --> this will add 192.168.1.1 as a Gateway
+
+ip route add default via 192.168.1.1 --> this will set 192.168.1.1 as default gateway for all unknown routes
+
+A <--> B <--> C We can use B as a router, in routing rules of A we need to add gateway ip of B's, so A can connect to C
+
+After doing above also, trafic will not forward, we need to set /proc/sys/net/ipv4/ip_forward value from 0 to 1
+and /etc/sysctl.conf here too.
+

@@ -1,0 +1,23 @@
+ping google --> this will no result
+we need to add the ip in /etc/hosts file
+
+managing all dns records in local is difficult so DNS server came into picture
+we need to edit /etc/resolv.conf and add nameserver <nameserver-ip-addr>
+
+by default local host file has higher priority than DNS server
+
+we can change that by changing the order, hosts:          files dns
+
+We can add in DNS server Forward All to 8.8.8.8 so all unknow urls can be reloved by google dns
+
+If we add the following in resolv.conf,
+search mycompany.com
+
+then ping app, will resolve to app.mycompany.com
+
+DNS records,
+
+A is for ipv4 to name
+AAAA is for ipv6 to name
+CNAME is for name to name 
+
