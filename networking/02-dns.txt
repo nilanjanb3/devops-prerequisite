@@ -21,3 +21,4 @@ A is for ipv4 to name
 AAAA is for ipv6 to name
 CNAME is for name to name 
 
+
